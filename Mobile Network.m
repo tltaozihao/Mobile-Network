@@ -1,0 +1,10 @@
+Signal = -58.65 + User0{:,2:end};
+User = User0{:,2:end};
+Signal = power(10,(-58.65 + User0{:,2:end})/10);
+Noise = (1.38e-23)*290*180000;
+SINR = Signal/Noise;
+SINR = 10*log10(Signal/Noise);
+R = 180000*log2(1+Signal/Noise);
+Aggr_R = sum(R,2);
+Mean_R = mean(Aggr_R);
+plot(User);
